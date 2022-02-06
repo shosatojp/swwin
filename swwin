@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 BOOTID=$(efibootmgr | grep Windows | sed -E 's/Boot([0-9]+).*/\1/')
 echo "NextBoot: $BOOTID"
 efibootmgr --bootnext $BOOTID
